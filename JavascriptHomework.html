@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		body{
+			font-family:Dalek Pinpoint;
+			font-size: 25px;
+		}
+		input[type="email"]
+		{
+		font-family:Dalek Pinpoint;
+		font-size:20px;
+		}
+		input[type="text"]
+		{
+		font-family:Dalek Pinpoint;
+		font-size:20px;
+		}
+		input[type="number"]
+		{
+		font-family:Dalek Pinpoint;
+		font-size:20px;
+		}
+		input[type="radio"]
+		{
+		font-family:Dalek Pinpoint;
+		font-size:20px;
+		}
+		input[type="color"]
+		{
+		font-size:25px;
+		}
+		
+	</style>
+	<body bgcolor= #4AA1F8>
+		<form>
+			Username:
+			<input type= "text" id= "text1" name= "text1"><br>
+			Email:
+			<input type="email" id= "email1" name="email1"><br><br>
+			First Number:
+			<input type= "number" id= "number1" name= "number1" min="1" max="100"><br>
+			Second Number:
+			<input type= "number" id= "number2" name= "number2"min="1" max="100"><br><br>
+			Math Operations:<br>
+			
+				<input type= "radio" id= "add" name= "math"> + <br>
+				<input type= "radio" id= "subtract" name= "math"> - <br>
+				<input type= "radio" id= "multiple" name= "math"> * <br>
+				<input type= "radio" id= "divide" name= "math"> / <br>
+				<input type= "radio" id= "modulo" name= "math"> % <br>
+			
+			Answer text color:
+			<input type= "color" id="color" name="color"><br><br>
+		</form>
+		<p id="p1"> </p>
+		<p id="p2"> </p>
+		<button onclick="func1()" style="font-size:22px;font-family:Dalek Pinpoint;color:#4AA1F8;"> Register </button>
+		<button onclick="func2()"style="font-size:22px;font-family:Dalek Pinpoint; color:#4AA1F8;"> Solve </button>
+		<button onclick="func3()"style="font-size:22px;font-family:Dalek Pinpoint; color:#4AA1F8;"> Change Color </button>
+		<script>
+			function func1()
+			{
+				var x= document.getElementById("p1");
+				y= document.getElementById("text1");
+				z=document.getElementById("email1");
+				x.innerHTML ="Welcome "+ y.value+"! You are registered at "+z.value;
+			}
+			function func2()
+			{
+				var x= document.getElementById("p2");
+				var num1=document.getElementById("number1");
+				var num2=document.getElementById("number2");
+				var add=document.getElementById("add");
+				var subtract= document.getElementById("subtract");
+				var multiple= document.getElementById("multiple");
+				var divide= document.getElementById("divide");
+				var modulo= document.getElementById("modulo");
+				if(add.checked== true)
+				{
+					var result= parseInt(num1.value)+ parseInt(num2.value);
+				}
+				if(subtract.checked== true)
+				{
+					var result= parseInt(num1.value)- parseInt(num2.value);
+				}
+				if(multiple.checked==true)
+				{
+					var result= parseInt(num1.value)* parseInt(num2.value);
+				}
+				if(divide.checked=== true)
+				{
+					var result= parseInt(num1.value)/ parseInt(num2.value);
+				}
+				if(modulo.checked== true)
+				{
+					var result= parseInt(num1.value)% parseInt(num2.value);
+				}
+				x.innerHTML+= result+"<br>";
+			}
+			function func3()
+			{
+				var color= document.getElementById("color");
+				var x= document.getElementById("p1");
+				var y= document.getElementById("p2");
+				x.style.color= color.value;
+				y.style.color= color.value;
+			}
+		</script>
+	</body>
+</html>
